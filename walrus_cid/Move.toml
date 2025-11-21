@@ -1,0 +1,11 @@
+[package]
+name = "model_bundle"
+version = "0.0.1"
+edition = "2024"
+license = "MIT"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "main" }
+
+[addresses]
+model_bundle = "0x0"
