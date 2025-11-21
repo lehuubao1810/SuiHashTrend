@@ -886,7 +886,7 @@ export default function Home() {
 
   const getDataTxHash = async () => {
     try {
-      const response = await fetch("http://localhost:5555/sui/getTxHash");
+      const response = await fetch("https://suihashtrend.up.railway.app/sui/getTxHash");
       const data = await response.json();
       console.log("🚀 TX Hashes:", data);
 

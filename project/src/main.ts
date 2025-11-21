@@ -26,7 +26,7 @@ async function bootstrap() {
   SwaggerModule.setup('api/docs', app, document);
   // Enable CORS for frontend
   app.enableCors({
-    origin: ['http://localhost:3000', 'https://your-frontend.com'],
+    origin: ['http://localhost:3000', 'https://sui-hash-trend.vercel.app'],
     credentials: true,
   });
 
@@ -36,11 +36,11 @@ async function bootstrap() {
    app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
   await app.listen(port);
 
-  console.log('='.repeat(60));
-  console.log(`🚀 Application is running on: http://localhost:${port}`);
-  console.log(`📚 Swagger documentation: http://localhost:${port}/api/docs`);
-  console.log(`🔌 WebSocket server on: ws://localhost:${process.env.WS_PORT}`);
-  console.log('='.repeat(60));
+  // console.log('='.repeat(60));
+  // console.log(`🚀 Application is running on: http://localhost:${port}`);
+  // console.log(`📚 Swagger documentation: http://localhost:${port}/api/docs`);
+  // console.log(`🔌 WebSocket server on: ws://localhost:${process.env.WS_PORT}`);
+  // console.log('='.repeat(60));
 }
 
 bootstrap().catch((error) => {

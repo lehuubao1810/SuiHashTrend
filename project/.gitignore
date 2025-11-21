@@ -400,4 +400,8 @@ dist
 .serverless/**/*.zip
 
 
-transactions/
+transactions/buy_nft/*.json
+transactions/mint_nft/*.json
+transactions/other/*.json
+transactions/stake/*.json
+transactions/swap/*.json
