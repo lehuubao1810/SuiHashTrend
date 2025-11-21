@@ -30,7 +30,7 @@ async function bootstrap() {
     credentials: true,
   });
 
-  const port = process.env.PORT || 5555;
+  const port = process.env.PORT || 8080;
    // Tăng giới hạn JSON payload lên 50MB
    app.use(bodyParser.json({ limit: '50mb' }));
    app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
