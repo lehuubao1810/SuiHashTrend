@@ -825,15 +825,19 @@ export default function Home() {
   };
 
   const downloadZipFromWalrus = async (blobId: string): Promise<Blob> => {
-    const response = await fetch(
-      `https://wal-aggregator-testnet.staketab.org/v1/blobs/${blobId}`
-    );
+    // const response = await fetch(
+    //   `https://wal-aggregator-testnet.staketab.org/v1/blobs/${blobId}`
+    // );
+    // console.log("🚀 ~ downloadZipFromWalrus ~ response:", response)
+    const res = await walrus.walrus.readBlob({blobId})
+    console.log("🚀 ~ downloadZipFromWalrus ~ res:", res)
+    const blob = new Blob([res], { type: "application/zip" });
+    return blob
+    // if (!response.ok) {
+    //   throw new Error(`Failed to fetch blob: ${response.statusText}`);
+    // }
 
-    if (!response.ok) {
-      throw new Error(`Failed to fetch blob: ${response.statusText}`);
-    }
-
-    return await response.blob();
+    // return await response.blob();
   };
 
   const extractZipFiles = async (zipBlob: Blob): Promise<ExtractedFile[]> => {
